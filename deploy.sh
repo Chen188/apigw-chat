@@ -1,0 +1,3 @@
+chalice package --merge-template resources.json out --profile default
+aws cloudformation package  --template-file out/sam.json --s3-bucket binc-chalice-chat-dev-deploymentbucket --output-template-file out/template.yml --region cn-northwest-1 --profile default
+aws cloudformation deploy --template-file out/template.yml --stack-name ChaliceChat --capabilities CAPABILITY_IAM  --region cn-northwest-1 --profile default
